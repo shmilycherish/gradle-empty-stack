@@ -10,6 +10,6 @@ public class Mobile {
     }
 
     public void call(String message) {
-        System.out.println(String.format("Message : [%s]", message));
+        System.out.println(String.format("Message : %s", message));
     }
 }
