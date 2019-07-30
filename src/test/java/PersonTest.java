@@ -24,6 +24,20 @@ public class PersonTest {
         person.call("hello, mobile");
 
         assertTrue(systemOut().contains("hello, mobile\n"));
+        assertTrue(systemOut().contains("iPhone"));
+    }
+
+    @Test
+    public void shouldPersonChangeMobile() {
+        String name = "Roy";
+        Mobile mobile = new IPhone("iPhone 6", "red", "iPhone");
+        Person person = new Person(name, mobile);
+        person.setMobile(new Android("OPPO 11", "red", "OPPO"));
+
+        person.call("hello, mobile");
+
+        assertTrue(systemOut().contains("hello, mobile\n"));
+        assertTrue(systemOut().contains("Android"));
     }
 
     public String systemOut() {
