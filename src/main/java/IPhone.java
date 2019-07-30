@@ -8,5 +8,4 @@ public class IPhone extends Mobile {
     public void call(String message) {
         System.out.println(String.format("<iPhone>Message : %s", message));
     }
-
 }
