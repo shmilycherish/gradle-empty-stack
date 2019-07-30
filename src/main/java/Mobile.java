@@ -1,4 +1,5 @@
 public class Mobile {
+    public static final int MESSAGE_LIMITATION_LENGTH = Integer.MAX_VALUE;
     private final String name;
     private final String color;
     private final String brand;
@@ -10,7 +11,19 @@ public class Mobile {
     }
 
     public void call(String message) {
-        System.out.println(String.format("Message : %s", message));
+        if (message.length() > getMessageLimitation()) {
+            System.out.println(String.format("%s Message cannot be sent", getMobileType()));
+        } else {
+            System.out.println(String.format("%sMessage : %s", getMobileType(), message));
+        }
+    }
+
+    protected int getMessageLimitation() {
+        return MESSAGE_LIMITATION_LENGTH;
+    }
+
+    protected String getMobileType() {
+        return "";
     }
 
     public void printBasicInfo() {

@@ -4,8 +4,11 @@ public class Android extends Mobile {
         super(name, color, brand);
     }
 
-    @Override
-    public void call(String message) {
-        System.out.println(String.format("<Android>Message : %s", message));
+    protected int getMessageLimitation() {
+        return 17;
+    }
+
+    protected String getMobileType() {
+        return "<Android>";
     }
 }

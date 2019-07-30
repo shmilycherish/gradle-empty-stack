@@ -11,9 +11,16 @@ public class AndroidTest extends MobileBasicTest{
 
     @Test
     public void shouldMobileCallWithMessage() {
-        mobile.call("Hello, iPhone");
+        mobile.call("Hello, Android");
 
-        assertTrue(systemOut().equals("<Android>Message : Hello, iPhone\n"));
+        assertTrue(systemOut().equals("<Android>Message : Hello, Android\n"));
+    }
+
+    @Test
+    public void shouldMobileCallWithErrorWhenMessageIsTooLong() {
+        mobile.call("Hello, Android OPPO");
+
+        assertTrue(systemOut().equals("<Android> Message cannot be sent\n"));
     }
 
     @Test
@@ -27,4 +34,6 @@ public class AndroidTest extends MobileBasicTest{
     public Mobile getSpecificMobile() {
         return new Android("name1", "red", "OPPO");
     }
+
+
 }

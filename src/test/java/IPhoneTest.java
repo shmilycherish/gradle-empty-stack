@@ -17,6 +17,13 @@ public class IPhoneTest extends MobileBasicTest{
     }
 
     @Test
+    public void shouldMobileCallWithErrorWhenMessageIsTooLong() {
+        mobile.call("Hello, iPhone X");
+
+        assertTrue(systemOut().equals("<iPhone> Message cannot be sent\n"));
+    }
+
+    @Test
     public void shouldMobileCallGetBasicInfo() {
         mobile.printBasicInfo();
 

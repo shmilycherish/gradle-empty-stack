@@ -4,8 +4,11 @@ public class IPhone extends Mobile {
         super(name, color, brand);
     }
 
-    @Override
-    public void call(String message) {
-        System.out.println(String.format("<iPhone>Message : %s", message));
+    protected int getMessageLimitation() {
+        return 14;
+    }
+
+    protected String getMobileType() {
+        return "<iPhone>";
     }
 }
