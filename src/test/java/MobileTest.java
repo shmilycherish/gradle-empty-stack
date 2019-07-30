@@ -1,4 +1,3 @@
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -15,6 +14,13 @@ public class MobileTest extends MobileBasicTest{
         mobile.call("Hello, Mobile");
 
         assertTrue(systemOut().equals("Message : Hello, Mobile\n"));
+    }
+
+    @Test
+    public void shouldMobileCallGetBasicInfo() {
+        mobile.printBasicInfo();
+
+        assertTrue(systemOut().equals("name: name1, color: red, brand: NOKIA\n"));
     }
 
     @Override

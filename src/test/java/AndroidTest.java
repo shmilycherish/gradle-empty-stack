@@ -16,6 +16,13 @@ public class AndroidTest extends MobileBasicTest{
         assertTrue(systemOut().equals("<Android>Message : Hello, iPhone\n"));
     }
 
+    @Test
+    public void shouldMobileCallGetBasicInfo() {
+        mobile.printBasicInfo();
+
+        assertTrue(systemOut().equals("name: name1, color: red, brand: OPPO\n"));
+    }
+
     @Override
     public Mobile getSpecificMobile() {
         return new Android("name1", "red", "OPPO");
